@@ -19,6 +19,7 @@ from .funcn import *
 
 LOG = -1001728993522
 
+
 async def stats(e):
     try:
         wah = e.pattern_match.group(1).decode("UTF-8")
@@ -120,7 +121,7 @@ async def dl_link(event):
         f"Original Size : {hbs(org)}\nCompressed Size : {hbs(com)}\nCompressed Percentage : {per}\n\nMediainfo: [Before]({a1})//[After]({a2})\n\nDownloaded in {x}\nCompressed in {xx}\nUploaded in {xxx}",
         link_preview=False,
     )
-    
+
     os.remove(dl)
     os.remove(out)
     WORKING.clear()
@@ -244,7 +245,7 @@ async def encod(event):
                 ),
             )
         ds = await e.client.send_file(
-            e.chat_id, file=ok, force_document=True, thumb=thum, caption=bb 
+            e.chat_id, file=ok, force_document=True, thumb=thum, caption=bb
         )
         await nnn.delete()
         org = int(Path(dl).stat().st_size)
@@ -259,7 +260,7 @@ async def encod(event):
         a2 = await info(out, e)
         dk = await ds.reply(
             f"Original Size : {hbs(org)}\nCompressed Size : {hbs(com)}\nCompressed Percentage : {per}\n\nMediainfo: [Before]({a1})//[After]({a2})\n\nDownloaded in {x}\nCompressed in {xx}\nUploaded in {xxx}",
-            link_preview=False
+            link_preview=False,
         )
         await ds.forward_to(LOG)
         await dk.forward_to(LOG)
